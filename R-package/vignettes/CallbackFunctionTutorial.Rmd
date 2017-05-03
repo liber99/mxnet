@@ -145,7 +145,7 @@ mx.callback.early.stop <- function(eval.metric) {
   function(iteration, nbatch, env, verbose) {
     if (!is.null(env$metric)) {
       if (!is.null(eval.metric)) {
-        result <- env$metric$get(env$eval.metric)
+        result <- env$metric$get(env$train.metric)
         if (result$value < eval.metric) {
           return(FALSE)
         }
